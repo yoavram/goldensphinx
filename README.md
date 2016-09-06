@@ -76,3 +76,8 @@ pip install git+https://github.com/yoavram/goldensphinx.git
 ## Authors
 
 - Yoav Ram (@yoavram)
+
+## Acknowledgements
+
+- The project is inspired by, and the `serve` command is modified from [kennethreitz/goldenarch](https://github.com/kennethreitz/goldenarch).
+- Many thanks to the authors of Python, Gunicorn, Sphinx, Click, Static and everything else we build our apps with.
