@@ -1,0 +1,3 @@
+include versioneer.py
+include click_spinner/_version.py
+include goldensphinx/_version.py
