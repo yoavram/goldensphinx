@@ -18,7 +18,7 @@ app = static.Cling('.')
 @click.group(chain=True)
 @click.version_option(version=goldensphinx.__version__, prog_name=goldensphinx.__name__)
 def cli():
-	if os.environ.get('SPHINX', 'true').lower() == 'false':
+	if os.environ.get('GOLDENSPHINX', 'true').lower() == 'false':
 		return
 
 

@@ -59,6 +59,8 @@ $ goldensphinx serve --host 127.0.0.1
 [2016-09-06 10:02:14 +0300] [55096] [INFO] Listening at: http://127.0.0.1:8080 (87302)
 ```
 
+You can also set the environment variable `GOLDENSPHINX` to `false` if you want to prevent goldensphinx from running.
+
 ## Install
 
 Stable:
