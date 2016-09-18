@@ -38,7 +38,7 @@ Options:
   --static_dir PATH      Static directory to serve
   --host TEXT            Hostname to serve on
   --port INTEGER         Port to serve on
-  --num_threads INTEGER  Number of threads
+  --threads INTEGER      Number of threads
   --help                 Show this message and exit.
 ```
 
@@ -48,7 +48,7 @@ All options can be also be set using environment variables:
 - `dest_dir` by `DOCS_DIR`
 - `port` by `PORT`
 - `host` by `HOST`
-- `num_threads` by `NUM_SERVER_THREADS`
+- `threads` by `NUM_SERVER_THREADS`
 
 For example:
 

@@ -26,14 +26,14 @@ def cli():
 @click.option('--static_dir', default="docs/_build/html", envvar="STATIC_DIR", type=click.Path(), help="Static directory to serve")
 @click.option('--host', default='0.0.0.0', envvar="HOST", help="Hostname to serve on")
 @click.option('--port', default=8000, envvar="PORT", help="Port to serve on")
-@click.option('--num_threads', default=16, envvar="NUM_SERVER_THREADS", help="Number of threads")
-def serve(static_dir, host, port, num_threads):
+@click.option('--threads', default=16, envvar="NUM_SERVER_THREADS", help="Number of threads")
+def serve(static_dir, host, port, threads):
 	if not os.path.exists(static_dir):
 		raise click.ClickException('Invalid value for "--static_dir": Path "{}" does not exist.'.format(static_dir))
 	prev_dir = os.getcwd()
 	os.chdir(static_dir)
-	cmd = 'gunicorn goldensphinx:app -b {host}:{port} -w {num_threads} -k gevent -t 2 --name goldensphinx'
-	cmd = cmd.format(port=port, host=host, static_dir=static_dir, num_threads=num_threads)
+	cmd = 'gunicorn goldensphinx:app -b {host}:{port} -w {threads} -k gevent -t 2 --name goldensphinx'
+	cmd = cmd.format(port=port, host=host, static_dir=static_dir, threads=threads)
 	args = shlex.split(cmd)
 	res = subprocess.run(args).returncode
 	os.chdir(prev_dir)
